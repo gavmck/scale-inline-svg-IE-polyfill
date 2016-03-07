@@ -33,10 +33,7 @@ function fixThisSVG(svg) {
 }
 
 function fixSizes() {
-  const svgs = document.querySelectorAll('svg');
-  for (let i = 0; i < svgs.length; i++) {
-    fixThisSVG(svgs[i]);
-  }
+  [...document.querySelectorAll('svg')].forEach(fixThisSVG);
 }
 
 export default function init() {
