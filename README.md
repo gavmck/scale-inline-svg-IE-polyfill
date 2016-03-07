@@ -7,7 +7,7 @@ SVG must have height/width.
 
 ## Usage
 ```
-import scaleSVG from 'scae-svg-polyfill';
+import scaleSVG from 'scale-svg-polyfill';
 scaleSVG();
 ```
 
