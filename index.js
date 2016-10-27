@@ -1,16 +1,17 @@
 function isCrapBrowser() {
-  //return true;
-  const ua = window.navigator.userAgent;
-  if (ua.indexOf('Trident/7.0') > 0) {
-    return true;
-  } else if (ua.indexOf('Trident/6.0') > 0) {
-    return true;
-  } else if (ua.indexOf('Trident/5.0') > 0) {
-    return true;
-  } else if ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 &&     nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1)) {
+  const nua = window.navigator.userAgent;
+  if(/Trident\/[567]\.0/.exec(nua) != null) {
     return true;
   }
-  return false;  // not IE9, 10 or 11
+  if(nua.indexOf('Chrome') == -1) {
+    return false;
+  }
+  if (nua.indexOf('Mozilla/5.0') > -1 &&
+      nua.indexOf('Android ') > -1    &&
+      nua.indexOf('AppleWebKit') > -1)) {
+    return true;
+  }
+  return false;
 }
 
 function fixThisSVG(svg) {
