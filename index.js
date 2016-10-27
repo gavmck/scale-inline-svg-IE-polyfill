@@ -1,6 +1,6 @@
 function isCrapBrowser() {
   const nua = window.navigator.userAgent;
-  if(/Trident\/[567]\.0/.exec(ua) != null) {
+  if(/Trident\/[567]\.0/.exec(nua) != null) {
     return true;
   }
   if(nua.indexOf('Chrome') == -1) {
