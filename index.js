@@ -1,5 +1,17 @@
 function isCrapBrowser() {
-  return /Trident\/[567]\.0/.exec(window.navigator.userAgent) != null;
+  const nua = window.navigator.userAgent;
+  if(/Trident\/[567]\.0/.exec(ua) != null) {
+    return true;
+  }
+  if(nua.indexOf('Chrome') == -1) {
+    return false;
+  }
+  if (nua.indexOf('Mozilla/5.0') > -1 &&
+      nua.indexOf('Android ') > -1    &&
+      nua.indexOf('AppleWebKit') > -1)) {
+    return true;
+  }
+  return false;
 }
 
 function fixThisSVG(svg) {
