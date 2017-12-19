@@ -28,7 +28,7 @@ function fixThisSVG(svg) {
 
     wrapper.appendChild(spacer);
 
-    svg.parentNode.appendChild(wrapper);
+    svg.parentNode.appendBefore(wrapper, svg);
 
     svg.setAttribute('style', 'display: block; width: 100%; position: absolute; top: 0; left: 0; bottom: 0;');
 
