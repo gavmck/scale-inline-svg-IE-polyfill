@@ -18,7 +18,7 @@ function fixThisSVG(svg) {
   const width = svg.getAttribute('width');
   const height = svg.getAttribute('height');
 
-  if (width && height && !svg.getAttribute('data-ignore-svg-polyfill') && isCrapBrowser()) {
+  if (width && height && !svg.getAttribute('data-ignore-svg-polyfill')) {
     const ratio = (parseInt(height, 10) / parseInt(width, 10) * 100) + '%';
     const wrapper = document.createElement('div');
     const spacer = document.createElement('div');
@@ -41,5 +41,7 @@ function fixSizes() {
 }
 
 export default function init() {
-  fixSizes();
+  if (isCrapBrowser()) {
+    fixSizes();
+  }
 }
